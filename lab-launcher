@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# TERM robusto (se mancante)
+if [ -z "${TERM:-}" ]; then
+  TERM="xterm-256color"
+  export TERM
+fi
+
+safe_clear() {
+  if [ -t 1 ] && command -v clear >/dev/null 2>&1; then
+    clear
+  fi
+}
+
+read_choice() {
+  # input robusto: preferisci /dev/tty quando disponibile
+  if [ -r /dev/tty ]; then
+    printf "Select test: " > /dev/tty
+    IFS= read -r choice < /dev/tty
+  else
+    printf "Select test: "
+    IFS= read -r choice
+  fi
+}
+
+pause_enter() {
+  echo
+  echo "Press ENTER to return to menu"
+  if [ -r /dev/tty ]; then
+    read _ < /dev/tty
+  else
+    read _
+  fi
+}
+
+while true; do
+  safe_clear
+  echo "==============================="
+  echo "         SOC LAB MENU"
+  echo "==============================="
+  echo "1) Test 1"
+  echo "2) Test 2"
+  echo "3) Test 3"
+  echo "0) Exit"
+  echo
+
+  read_choice
+
+  case "${choice:-}" in
+    1)
+      echo "[RUN] Test 1"
+      /usr/local/bin/test_1.sh
+      pause_enter
+      ;;
+    2)
+      echo "[RUN] Test 2"
+      /usr/local/bin/test_2.sh
+      pause_enter
+      ;;
+    3)
+      echo "[RUN] Test 3"
+      /usr/local/bin/test_3.sh
+      pause_enter
+      ;;
+    0)
+      echo "Exiting..."
+      exit 0
+      ;;
+    *)
+      echo "Invalid choice"
+      pause_enter
+      ;;
+  esac
+done
