@@ -5,7 +5,7 @@ Photon OS viene utilizzato come macchina virtuale in formato OVA e Docker viene 
 
 Scaricare Photon OS in formato OVA dal sito ufficiale VMware:  
 https://github.com/vmware/photon/wiki/Downloading-Photon-OS  
-Selezionare Photon OS OVA (ultima versione stabile, 15).  
+Selezionare Photon OS OVA (ultima versione stabile, v15).  
 
 Accedere all’ESXi Host Client tramite browser:  
 https://IP_ESXI/ui  
@@ -13,6 +13,10 @@ https://IP_ESXI/ui
 Importare la OVA seguendo il percorso:  
 Virtual Machines → Create / Register VM → Deploy a virtual machine from an OVF or OVA file.  
 Selezionare il file Photon-OS.ova, accettare tutte le opzioni di default e completare il wizard.  
+Assicurarsi di impostare:  
+CPU: 2 vCPU  
+RAM: 3GB  
+
 Accendere la macchina virtuale (Power On) e aprire la console.  
 
 Accedere a Photon OS con le credenziali di default:  
