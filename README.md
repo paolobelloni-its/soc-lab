@@ -34,7 +34,7 @@ Installare git:
 tdnf install -y git  
 
 Scaricare sulla VM appena installata i file necessari al laboratorio con il comando:  
-git clone https://github.com/XXXXXXXX/soc-lab.git  
+git clone https://github.com/paolobelloni-its/soc-lab.git    
 
 e spostarsi nella cartella opportuna:  
 cd soc-lab  
