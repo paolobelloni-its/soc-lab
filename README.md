@@ -49,6 +49,6 @@ docker run --rm -it soc-lab:1
 
 # SOC Lab – Scopo e metodo  
 
-Lo scopo del laboratorio e' capire cosa succede su ESXi quando si la lanciano i 3 test scaricati.  
+Lo scopo del laboratorio e' capire cosa succede su ESXi quando si lanciano i 3 test scaricati.  
 Scegliere ogni test dal menu e, osservando i tool di monitoring che ESXi mette a disposizione, si chiede di capire cosa sta avvenendo sulla macchina host.  
 
