@@ -10,6 +10,9 @@ Selezionare Photon OS OVA (ultima versione stabile, v15).
 Accedere all’ESXi Host Client tramite browser:  
 https://IP_ESXI/ui  
 
+
+https://storage.to/Hc6TfekeE
+
 Importare la OVA seguendo il percorso:  
 Virtual Machines → Create / Register VM → Deploy a virtual machine from an OVF or OVA file.  
 Selezionare il file Photon-OS.ova, accettare tutte le opzioni di default e completare il wizard.  
